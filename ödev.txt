@@ -1,0 +1,69 @@
+2- Geleneksel dosyalama sistemleriyle veri tabanı yönetim sistemlerinin benzerlik ve farklılıklarını açıklayınız
+
+2: Benzerlikleri; Her ikisi de veri depolamak için kullanılan sistemlerdir, veri erişimi ile kullanıcıların verilere erişmesini sağlarlar, veri güvenliğiyle her ikisi de kullanıcı yetkilendirmeleri ve veri şifreleme gibi gelişmiş güvenlik önlemleri sunar, her iki sistem de veri kaybını önlemek için yedeklemeye izin verir. Farklılıkları; artan veri kapasitesi, veri işleme hızı ve kullanım alanı gibi birçok durumda geleneksel dosyalama sisteminin veri tabanında yetersiz kalmıştır. Veri akışı çok fazla miktarda olan sistemlerde veri tabanı yöntemi kullanılırken basit düzeyde ve karmaşık olmayan verilerin saklanmasında geleneksel dosyalama sistemleri kullanılıyor.
+
+********************************************************************************************************************
+
+3- VTYS'nin geleneksel sisteme göre üstün özelliklerini açıklayınız.
+
+3: VTYS'nin geleneksel sisteme göre çok daha fazla depolama alanının olması, veri işleme hızının ve kullanım alanının daha gelişmiş ve kapasiteli olması, çok daha karmaşık ve zor verilerin saklanabilmesi VTYS'nin geleneksel sisteme göre üstün özelliklerindendir.
+
+********************************************************************************************************************
+
+4- Veri tabanının görevini açıklayarak kullanıldığı alanlara örnekler veriniz.
+
+4: Veri tabanının görevi herhangi bir konuda birbiriyle ilişkili ve düzenli bilgiler topluluğudur, hemen hemen her alanlarda kullanılmaktadır. Veri tabanı istediğimiz bilgileri, istediğimiz türde, istediğimiz sürece saklanmasını sağlamaktır. Örneğin taksitlerin, stokların, öğrenci bilgilerinin, hastane otomasyon sisteminin, müşteri bilgilerinin, ödemelerin verilerini tutmak için veri tabanı kullanılır.
+
+********************************************************************************************************************
+
+5- Tablo, satır ve sütun kavramlarını açıklayınız.
+
+5: Tablo; Veri tabanı içerisinde tutulacak verileri taşımak için kullanılır, bir veri tabanında birden fazla tablo kullanılabilir, tablolar özellikle barındırılacak veri gruplarına göre belirlenir. Oluşturulan tablolar arasında çeşitli ilişkiler bulunabilir. Satır; tablo içerisinde sütuna ait veri grubudur. Örneğin; öğrencinin no, ad, soy ad gibi bilgilerinin tamamı satırı ifade etmektedir. Çoğunlukla kayıt(record) olarak ifade edilir. Sütun; Tablo içerisinde tutulan her bir veri türüne verilen isimdir. Bir tablo içerisinde birden fazla kullanılmaktadır 
+
+********************************************************************************************************************
+
+6- Birincil anahtar ve yabancıl anahtar kavramlarını ve farklılıklarını açıklayınız.
+
+6: Primary Key (Birincil Anahtar) benzersiz ve aynı değeri iki kez alamayacak sütuna birincil anahtar olarak belirtilir. Primary Key NULL(boş) değerleri veya birbirinin aynısı olan değerleri alamaz. Primary Key kayıt silme ve düzeltme gibi bir çok alanda kolaylık sağlar. Foreign Key (Yabancıl Anahtar) bir sütun veya birden fazla sütunun birleşiminden oluşur. sütunu Foreign Key olarak belirleme söz konusu değildir. İlişki kurulmadığı sürece kullanılamaz. Foreign Key sütunu aynı tablo veya başka bir tablodaki primary key olan bir sütunla ilişkilendirilebilir. Farklılıkları ise primary key bir tablodaki her satırı benzersiz olarak tanımlayan alandır, aynı değeri tekrar edemez ve NULL(boş) olamaz, Foreign key ise bir tablodaki alanın, başka bir tablodaki Primary Key' e referans vermesidir. İlişkili tablolar arasında bağlantı kurar ve tekrarlayan değerler içerebilir özetle Primary Key tabloyu tanımlar, Foreign Key ise tablolar arası ilişkiyi sağlar.
+
+********************************************************************************************************************
+
+7- Veri tabanı kullanıcı türleri nelerdir?
+
+7:
+1)VERİ TABANI YÖNETİCİSİ(DBA-DATABASE ADMİNİSTRATOR)
+2)UYGULAMA PROGRAMCISI
+3)SORGU DİLİ KULLANICILARI
+4)SON KULLANICILAR
+
+********************************************************************************************************************
+
+8-Örnek bir veri tabanı için kullanıcılar belirleyerek yetkilendirmelerini şematik olarak gösteriniz
+
+8:
+
+********************************************************************************************************************
+
+9-Veri tabanı ile VTYS'nin farkını açıklayınız
+
+9:Veri tabanı verilerin saklandığı düzenli ve organize edilmiş depolama alanıdır, tablolar, kayıtlar, ilişkiler, indeksler, vs. içerir, verileri saklamak, düzenlemek ve erişime sunmak gibi özellikleri vardır. VTYS ise veri tabanlarını oluşturan, yöneten ve kontrol eden yazılımdır, SQL sorgu motoru, veri erişim kontrolleri, yönetim araçları içerir, veri tabanlarını yönetmek için kullanılan sistemdir. Özetle veri tabanı, verilerin saklandığı yerdir VTYS ise veri tabanını oluşturan, yöneten ve kullanıcılarla etkileşim sağlayan bir yazılımdır.
+
+********************************************************************************************************************
+
+10- İlişkisel  veri modelini açıklayanız.
+
+10: Bu modelde ortak özelliğe sahip veriler tablolar aracılığı ile tutulurlar. Tablolar satır ve sütunlardan oluşur. Her sütun ayrı bir veri tutar ve buraya alan(field) denilir. Her alanın tutacağı verinin tipi belirlenmelidir. Veriler ve ilişkiler tablolar üzerinde tanımlanır ve tüm bilgiler görülebilecek şekildedir. İlişkiler kurulurken Primary Key ve Foreign Key kullanılır. Birden fazla tablodaki bilgiler ortak alanlar tanımlanarak birbiriyle ilişkilendirilir. Böylelikle istenilen her türlü raporlama sağlanır.
+
+********************************************************************************************************************
+
+11- Bir öğrenci bilgi sistemi için kullanılacak veri tabanı, tablolar ve tablolar arasındaki ilişkileri belirleyiniz.
+
+11: Öğrenciler Tablosu: Öğrencilerin ad, soyad, iletişim ve hangi bölümde okudukları bilgilerini içerir. 
+BÖLÜMLER TABLOSU: Üniversitedeki bölümlerin isimlerini saklar.
+DERLES TABLOSU: Verilen derslerin adını, hangi bölümden olduğunu ve hangi öğretmen tarafından verildiğini belirtir.
+ÖĞRETMENLER TABLOSU: Ders veren öğretmenlerin iletişim ve kimlik bilgilerini tutar.
+NOTLAR TABLOSU: Hangi öğrencinin hangi dersten hangi notu aldığı bilgisini içerir.
+
+İlişkiler: Öğrenciler tablosu, Bölümler tablosuna bağlıdır (her öğrenci bir bölümde öğrenim görür).
+Dersler tablosu, hem Bölümler hem de Öğretmenler tablolarına bağlıdır (dersin ait olduğu bölüm ve dersi veren öğretmen).
+Notlar tablosu, Öğrenciler ve Dersler tablolarına bağlıdır (her not, ilgili öğrenci ve derse aittir).
