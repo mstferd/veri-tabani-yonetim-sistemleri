@@ -1,0 +1,55 @@
+--4:4.Opel marka araç yapılan satışların ve alımların hangi müşterilerle yapıldığını bulmak için gerekli SQL ifadesini yazınız.--
+SELECT M.Madi, M.Msoyadi, 'Satış' AS IslemTipi
+FROM Satis S
+JOIN Arac A ON S.Aracno = A.Aracno
+JOIN Musteri M ON S.Mno = M.Mno
+WHERE A.Marka LIKE '%Opel%'
+
+UNION
+
+SELECT M.Madi, M.Msoyadi, 'Alım' AS IslemTipi
+FROM Alim AL
+JOIN Arac A ON AL.Aracno = A.Aracno
+JOIN Musteri M ON AL.Mno = M.Mno
+WHERE A.Marka LIKE '%Opel%';
+
+--5:Araç fiyatı 20000 den yüksek olan araçların hangi fiyata satıldığını bulmak için gerekli SQL ifadesiniz yazınız.--
+SELECT A.Marka, A.Model, S.Sfiyat
+FROM Arac A
+JOIN Satis S ON A.Aracno = S.Aracno
+WHERE A.Fiyat > 20000;
+
+--6:Turhal ve Amasya’ya yapılan satışların toplam tutarını azalan sırada listelemek için gerekli SQL ifadesiniz yazınız.--
+SELECT M.Madi, M.Msoyadi, M.Madres, S.Sfiyat
+FROM Satis S
+JOIN Musteri M ON S.Mno = M.Mno
+WHERE M.Madres LIKE '%Turhal%' OR M.Madres LIKE '%Amasya%'
+ORDER BY S.Sfiyat DESC;
+
+--7:Satış veya alım yapılmayan müşterilerin bilgilerini listelemek için gerekli SQL ifadesiniz yazınız.--
+SELECT *
+FROM Musteri M
+WHERE M.Mno NOT IN (SELECT Mno FROM Satis)
+  AND M.Mno NOT IN (SELECT Mno FROM Alim);
+
+ --8:5.ve 6. Ayda yapılan satışların kimlere yapıldığını bulmak için gerekli SQL ifadesiniz yazınız.--
+ SELECT M.Madi, M.Msoyadi, S.Sat_tarih
+FROM Satis S
+JOIN Musteri M ON S.Mno = M.Mno
+WHERE MONTH(S.Sat_tarih) IN (5, 6);
+  
+
+--9:Aynı marka araç alan müşterileri ve aldığı araç markasını listelemek için gerekli SQL ifadesiniz yazınız.--
+SELECT M.Madi, M.Msoyadi, A.Marka
+FROM Alim AL
+JOIN Arac A ON AL.Aracno = A.Aracno
+JOIN Musteri M ON AL.Mno = M.Mno
+GROUP BY M.Madi, M.Msoyadi, A.Marka
+HAVING COUNT(*) > 1;  -- Aynı markadan birden fazla aldıysa
+
+--10:En yüksek fiyata satılan aracın marka, fiyat ve kime satıldığı bilgisini listelemek için gerekli SQL ifadesini yazınız.--
+SELECT TOP 1 A.Marka, S.Sfiyat, M.Madi, M.Msoyadi
+FROM Satis S
+JOIN Arac A ON S.Aracno = A.Aracno
+JOIN Musteri M ON S.Mno = M.Mno
+ORDER BY S.Sfiyat DESC;
