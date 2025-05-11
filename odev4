@@ -1,3 +1,58 @@
+CREATE TABLE Arac (
+    Aracno INT PRIMARY KEY,
+    Model INT,
+    Marka NVARCHAR(100),
+    Plaka NVARCHAR(20),
+    Fiyat DECIMAL(18,2)
+);
+
+
+CREATE TABLE Satis (
+    Satno INT PRIMARY KEY,
+    Mno INT FOREIGN KEY REFERENCES Musteri(Mno),
+    Aracno INT FOREIGN KEY REFERENCES Arac(Aracno),
+    Sat_tarih DATE,
+    Sfiyat DECIMAL(18,2)
+);
+
+CREATE TABLE Alim (
+    Alimno INT PRIMARY KEY,
+    Mno INT FOREIGN KEY REFERENCES Musteri(Mno),
+    Aracno INT FOREIGN KEY REFERENCES Arac(Aracno),
+    Alim_tarih DATE,
+    Afiyat DECIMAL(18,2)
+);
+
+INSERT INTO Musteri VALUES
+(1, 'Turgut', 'Özseven', 'Turhal/Tokat', '121646516416'),
+(2, 'Mustafa', 'Çağlayan', 'Meram/Konya', '465245212323'),
+(3, 'Ahmet', 'Kara', 'Zile/Tokat', '472376298362'),
+(4, 'Murat', 'Beyaz', 'Turhal/Tokat', '385235293859'),
+(5, 'Elif', 'Kurt', 'Beşiktaş/İstanbul', '948752835293'),
+(6, 'Ayşe', 'Uçar', 'Taşova/Amasya', '487394698292'),
+(7, 'Bülent', 'Ayar', 'Turhal/Tokat', '232378572352');
+
+INSERT INTO Arac VALUES
+(1, 2004, 'Fiat Marea', '38 VTYS 3838', 100000),
+(2, 2020, 'Renault Megane', '38 VTYS 3839', 110000),
+(3, 2010, 'Ford Focus', '38 VTYS 3840', 120000),
+(4, 2023, 'Volkswagen Golf', '38 VTYS 3841', 250000),
+(5, 2000, 'Opel Astra', '38 VTYS 3842', 82000);
+
+
+INSERT INTO Satis VALUES
+(1, 1, 1, '2022-05-04', 170000),
+(2, 4, 5, '2020-06-01', 115000),
+(3, 7, 4, '2023-06-15', 270000),
+(4, 2, 1, '2010-07-02', 17500);
+
+
+INSERT INTO Alim VALUES
+(1, 3, 1, '2022-05-04', 190000),
+(2, 6, 1, '2020-06-01', 525000),
+(3, 2, 5, '2023-06-15', 370000),
+(4, 1, 2, '2010-07-02', 17500),
+(5, 5, 3, '2021-08-22', 156800);
 --4:4.Opel marka araç yapılan satışların ve alımların hangi müşterilerle yapıldığını bulmak için gerekli SQL ifadesini yazınız.--
 SELECT M.Madi, M.Msoyadi, 'Satış' AS IslemTipi
 FROM Satis S
