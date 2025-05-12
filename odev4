@@ -1,3 +1,7 @@
+Create database galeri2
+
+use galeri2
+
 CREATE TABLE Arac (
     Aracno INT PRIMARY KEY,
     Model INT,
